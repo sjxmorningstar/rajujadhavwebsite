@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<title>कार्य – पोदार हायस्कूलच्या रस्त्यासाठी आमरण उपोषण</title>
+<link rel="stylesheet" href="work1.css">
+</head>
+
+<body>
+
+<!-- Back Button -->
+<a href="index.html" class="back-btn">⬅ मागे जा</a>
+
+<h1 class="title">पोदार हायस्कूलच्या रस्त्यासाठी आमरण उपोषण</h1>
+
+
+<!-- =====================================
+        VIDEO SECTION (ADDED)
+===================================== -->
+<div class="video-section">
+    <video id="mainVideo" autoplay muted loop playsinline>
+        <source src="work1/work1video.mp4" type="video/mp4">
+    </video>
+
+    <button class="mute-btn" onclick="toggleMute()">🔇</button>
+</div>
+
+<script>
+function toggleMute() {
+    const video = document.getElementById("mainVideo");
+    const btn = document.querySelector(".mute-btn");
+
+    video.muted = !video.muted;
+    btn.textContent = video.muted ? "🔇" : "🔊";
+}
+</script>
+<!-- ===================================== -->
+
+
+<div class="work-gallery">
+
+    <!-- Add your photos here -->
+    <div class="work-card">
+        <img src="work1/img1.jpeg" alt="">
+    </div>
+
+    <div class="work-card">
+        <img src="work1/img2.jpeg" alt="">
+    </div>
+
+    <div class="work-card">
+        <img src="work1/img3.jpeg" alt="">
+    </div>
+
+    <div class="work-card">
+        <img src="work1/img4.jpeg" alt="">
+    </div>
+
+    <div class="work-card">
+        <img src="work1/img5.jpeg" alt="">
+    </div>
+
+    <div class="work-card">
+        <img src="work1/img6.jpeg" alt="">
+    </div>
+
+    <div class="work-card">
+        <img src="work1/img7.jpeg" alt="">
+    </div>
+</div>
+
+
+<!-- Fullscreen Popup -->
+<div id="popup" class="popup">
+    <span class="close">&times;</span>
+    <img id="popup-img">
+</div>
+
+<script>
+const cards = document.querySelectorAll('.work-card img');
+const popup = document.getElementById('popup');
+const popupImg = document.getElementById('popup-img');
+const close = document.querySelector('.close');
+
+cards.forEach(img => {
+    img.addEventListener('click', () => {
+        popup.style.display = 'flex';
+        popupImg.src = img.src;
+    });
+});
+
+close.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
